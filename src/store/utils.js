@@ -22,9 +22,6 @@ export const createFailureActionType = (type) => `${type}_FAILURE`;
 
 export function createAction(actionType, options) {
     const rootAction = makeAction(actionType);
-
-
-    console.log('options',options);
     // refactor
     if (options?.success) {
         rootAction.success = makeAction(createSuccessActionType(actionType));
@@ -117,7 +114,7 @@ export function* processAction(options, { payload }) {
         const response = yield call(sendRequest, options, payload, cancelTokenSource.token);
 
         if (!response?.data.result) throw response;
-        
+
         onCompleted?.(response);
     } catch (error) {
         onError?.(error);

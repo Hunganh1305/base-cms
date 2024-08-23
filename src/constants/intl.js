@@ -23,3 +23,9 @@ export const actionMessage = defineMessages({
     contactForm: 'Biểu mẫu liên hệ',
     navigation: 'Chuyển hướng',
 });
+
+export const taskLog = defineMessages({
+    working: 'Làm việc',
+    off: 'Nghỉ phép',
+    bug: 'Bug',
+});

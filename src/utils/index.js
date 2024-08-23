@@ -273,3 +273,9 @@ export const formatMoney = (value = 0, setting = {}) => {
     }
     return '';
 };
+
+export const deleteSearchFilterInLocationSearch = (locationSearch, searchFilter = []) => {
+    const searchParams = new URLSearchParams(locationSearch);
+    searchFilter.forEach((value) => searchParams.delete(value));
+    return `?${searchParams.toString()}`;
+};

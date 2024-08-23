@@ -5,8 +5,6 @@ import useAuth from './useAuth';
 function useValidatePermission() {
     const { permissions, kind, profile } = useAuth();
 
-    // console.log('permission usevalid', permissions);
-
     const hasPermission = useCallback(
         (requiredPermissions, requiredKind, excludeKind, onValidate, path, separate) => {
             const _onValidate = onValidate ?? validatePermission;

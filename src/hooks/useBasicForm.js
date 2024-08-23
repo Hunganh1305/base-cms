@@ -3,8 +3,6 @@ import { Form } from 'antd';
 const useBasicForm = ({ onSubmit, setIsChangedFormValues, onResetForm, override, otherData } = {}) => {
     const [form] = Form.useForm();
     const getFieldValue = (fieldName) => {
-        console.log('get field value', fieldName);
-
         if (form) return form.getFieldValue(fieldName);
         return '';
     };
@@ -14,8 +12,6 @@ const useBasicForm = ({ onSubmit, setIsChangedFormValues, onResetForm, override,
     };
 
     const handleSubmit = (formValues) => {
-        console.log('formValues', formValues);
-
         onSubmit(
             {
                 ...formValues,
@@ -27,7 +23,6 @@ const useBasicForm = ({ onSubmit, setIsChangedFormValues, onResetForm, override,
 
     const handleCallBackAfterSubmitForm = ({ response }) => {
         const { data } = response;
-        console.log('handle call back', response);
 
         let errorField = [];
         if (!data?.result && data?.data?.length > 0) {

@@ -32,16 +32,8 @@ const NavSider = ({ collapsed, onCollapse, width }) => {
     function makeNavs(navs) {
         return navs.map((nav) => {
             const newNav = { ...nav };
-            // console.log('nav', newNav);
-            // console.log('permission', newNav.permission);
-            // console.log(
-            //     'check',
-            //     !validatePermission(newNav.permission, newNav.kind, newNav.excludeKind, newNav.onValidate),
-            // );
-
             if (newNav.permission || newNav.kind) {
                 if (!validatePermission(newNav.permission, newNav.kind, newNav.excludeKind, newNav.onValidate)) {
-                    console.log('run case');
 
                     return null;
                 }

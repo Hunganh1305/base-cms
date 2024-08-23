@@ -11,7 +11,8 @@ import PermissionSavePage from '@modules/groupPermission/PermissionSavePage';
 import SettingListPage from '@modules/listSetting';
 import SettingSavePage from '@modules/listSetting/SettingSavePage';
 import settingsRoutes from '@modules/settings/routes';
-import courseRoutes from '@modules/course/routes';
+import courseRoutes from '@modules/courseManage/course/routes';
+import subjectRoutes from '@modules/courseManage/subject/routes';
 
 /*
 	auth
@@ -75,6 +76,7 @@ const routes = {
         title: 'Settings page',
     },
 
+    ...subjectRoutes,
     ...courseRoutes,
     ...adminsRoutes,
     ...newsRoutes,

@@ -39,7 +39,7 @@ const NumericField = (props) => {
                 disabled={disabled}
                 style={{ width: width || '60%' }}
                 formatter={formatter || fieldParser}
-                parser={parser || fieldFormatter}
+                // parser={parser || fieldFormatter}
                 onChange={onChange}
                 onBlur={onBlur}
                 defaultValue={defaultValue}

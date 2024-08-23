@@ -33,8 +33,6 @@ const CourseForm = (props) => {
         setIsChangedFormValues,
     });
     const handleSubmit = (values) => {
-        console.log('values',values);
-
         if (!values?.state) {
             values.state = 1;
         }
@@ -248,18 +246,6 @@ const CourseForm = (props) => {
                             searchParams={(text) => ({ name: text })}
                         />
                     </Col>
-                    {/* <Col span={12}>
-                        <AutoCompleteField
-                            // disabled={dataDetail.state !== undefined && dataDetail.state !== 1}
-                            // required
-                            label={<FormattedMessage defaultMessage="Kiến thức" />}
-                            name="knowledgeId"
-                            apiConfig={apiConfig.category.autocomplete}
-                            mappingOptions={(item) => ({ value: item.id, label: item?.categoryName })}
-                            searchParams={(text) => ({ name: text, kind: categoryKinds.CATEGORY_KIND_KNOWLEDGE })}
-                            initialSearchParams={{ kind:5 }}
-                        />
-                    </Col> */}
                     <Col span={12}>
                         <SelectField
                             disabled={dataDetail?.state === 3 || (dataDetail?.state === 4 && true)}
@@ -277,9 +263,7 @@ const CourseForm = (props) => {
                             disabled={dataDetail.state !== undefined && dataDetail.state !== 1}
                             label={<FormattedMessage defaultMessage="Học phí" />}
                             fieldName="fee"
-                            formatter={(value) => {
-                                return `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                            }}
+                            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                             addonAfter={'đ'}
                             min={0}
                             defaultValue={0}
