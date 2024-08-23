@@ -53,76 +53,6 @@ const Course = () => {
                 });
             };
             funcs.additionalActionColumnButtons = () => ({
-                developer: ({ id, name, state, status, knowledge }) => {
-                    if (knowledge) {
-                        return (
-                            <BaseTooltip title={translate.formatMessage(commonMessage.developer)}>
-                                <Button
-                                    type="link"
-                                    style={{ padding: 0 }}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        navigate(
-                                            routes.developerKnowledgeListPage.path +
-                                                `?courseId=${id}&courseName=${name}&courseState=${state}&courseStatus=${status}&knowledgeId=${knowledge.id}`,
-                                        );
-                                    }}
-                                >
-                                    <UserOutlined />
-                                </Button>
-                            </BaseTooltip>
-                        );
-                    }
-                },
-                registration: ({ id, name, state, status }) => (
-                    <BaseTooltip title={translate.formatMessage(commonMessage.registration)}>
-                        <Button
-                            type="link"
-                            disabled={state === 1}
-                            style={{ padding: 0 }}
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                state !== 1 &&
-                                    navigate(
-                                        routes.registrationListPage.path +
-                                            `?courseId=${id}&courseName=${name}&courseState=${state}&courseStatus=${status}`,
-                                    );
-                            }}
-                        >
-                            <TeamOutlined />
-                        </Button>
-                    </BaseTooltip>
-                ),
-
-                task: ({ id, name, subject, state, status }) => (
-                    <BaseTooltip title={translate.formatMessage(commonMessage.task)}>
-                        <Button
-                            disabled={state === 1 || state === 5}
-                            type="link"
-                            style={{ padding: 0 }}
-                            onClick={(e) => {
-                                e.stopPropagation();
-                            }}
-                        >
-                            <BookOutlined />
-                        </Button>
-                    </BaseTooltip>
-                ),
-                review: ({ id, name, subject, state, status, item }) => (
-                    <BaseTooltip title={translate.formatMessage(commonMessage.review)}>
-                        <Button
-                            type="link"
-                            disabled={state === 1}
-                            style={{ padding: 0 }}
-                            onClick={(e) => {
-                                setCourseId(id);
-                                e.stopPropagation();
-                            }}
-                        >
-                            <CommentOutlined />
-                        </Button>
-                    </BaseTooltip>
-                ),
                 history: ({ id, name, state }) => (
                     <BaseTooltip title={translate.formatMessage(commonMessage.history)}>
                         <Button
@@ -233,12 +163,6 @@ const Course = () => {
         mixinFuncs.renderStatusColumn({ width: '120px' }),
         mixinFuncs.renderActionColumn(
             {
-                // developer: mixinFuncs.hasPermission([apiConfig.knowledgePermission.getList.baseURL]),
-                // review: mixinFuncs.hasPermission([
-                //     apiConfig.review.star?.baseURL,
-                //     apiConfig.review.listReviews?.baseURL,
-                // ]),
-                // registration: mixinFuncs.hasPermission([apiConfig.registration.getList?.baseURL]),
                 history: mixinFuncs.hasPermission([apiConfig.taskLog.getList?.baseURL]),
                 edit: true,
                 delete: true,

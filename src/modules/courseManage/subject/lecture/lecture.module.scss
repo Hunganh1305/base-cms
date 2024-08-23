@@ -1,0 +1,15 @@
+.highlightRowStyle {
+    background-color: #bdbdc8;
+    border-radius: 10px;
+    &:hover {
+        background-color: #bdbdc8 !important;
+        opacity: 1;
+    }
+    :global .ant-table-cell-row-hover {
+        background-color: #bdbdc8 !important;
+    }
+}
+.highlightRowTitle {
+    cursor: pointer;
+    background-color: #f4f2f2;
+}

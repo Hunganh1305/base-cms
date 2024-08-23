@@ -78,4 +78,7 @@ export const commonMessage = defineMessages({
     toDate: 'Đến ngày',
     project: 'Dự án',
     student: 'Sinh viên',
+    lecture: 'Bài giảng',
+    lectureName: 'Tên bài giảng',
+    leaderGuide: 'Hướng dẫn của leader',
 });

@@ -167,3 +167,6 @@ export const lectureStateMessage = defineMessages({
 export const TASK_LOG_WORKING = 1;
 export const TASK_LOG_OFF = 100;
 export const TASK_LOG_BUG = 200;
+
+export const LECTURE_SECTION = 1;
+export const LECTURE_LESSION = 2;

@@ -79,7 +79,7 @@ const SubjectListPage = () => {
 
     const handleOnClick = (event, record) => {
         event.preventDefault();
-        // navigate(`./lecture/${record.id}?subjectName=${record.subjectName}`);
+        navigate(`./lecture/${record.id}?subjectName=${record.subjectName}`);
     };
 
     const columns = [
@@ -121,15 +121,15 @@ const SubjectListPage = () => {
     return (
         <PageWrapper routes={breadRoutes}>
             <ListPage
-                // searchForm={mixinFuncs.renderSearchForm({ fields: searchFields, initialValues: queryFilter })}
-                // actionBar={mixinFuncs.renderActionBar()}
+                searchForm={mixinFuncs.renderSearchForm({ fields: searchFields, initialValues: queryFilter })}
+                actionBar={mixinFuncs.renderActionBar()}
                 baseTable={
                     <BaseTable
-                    // onChange={changePagination}
-                    // pagination={pagination}
-                    // loading={loading}
-                    // dataSource={data}
-                    // columns={columns}
+                        onChange={changePagination}
+                        pagination={pagination}
+                        loading={loading}
+                        dataSource={data}
+                        columns={columns}
                     />
                 }
             />

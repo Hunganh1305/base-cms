@@ -279,3 +279,12 @@ export const deleteSearchFilterInLocationSearch = (locationSearch, searchFilter 
     searchFilter.forEach((value) => searchParams.delete(value));
     return `?${searchParams.toString()}`;
 };
+
+export const moveArrayElement = (arr = [], from, to) => {
+    if (!Array.isArray(arr)) throw new Error('The first argument must be an array.');
+
+    const copy = arr.slice();
+    copy.splice(to, 0, copy.splice(from, 1)[0]);
+
+    return copy;
+};

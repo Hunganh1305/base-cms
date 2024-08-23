@@ -20,3 +20,8 @@ export const selectAppLocale = createSelector(
     state => state.app.locale,
     locale => locale,
 );
+
+export const selectedRowKeySelector = createSelector(
+    (state) => state.app.selectedRowKey,
+    (selectedRowKey) => selectedRowKey,
+);
