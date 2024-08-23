@@ -91,8 +91,6 @@ const TaskLogListPage = () => {
                 };
                 const handleFilterSearchChange = funcs.handleFilterSearchChange;
                 funcs.handleFilterSearchChange = (values) => {
-                    console.log('filter search change', values);
-
                     if (values.toDate == null && values.fromDate == null) {
                         delete values.toDate;
                         delete values.fromDate;
@@ -125,20 +123,12 @@ const TaskLogListPage = () => {
                 };
                 funcs.changeFilter = (filter) => {
                     const courseId = queryParams.get('courseId');
-                    const subjectId = queryParams.get('subjectId');
                     const courseName = queryParams.get('courseName');
-                    const taskId = queryParams.get('taskId');
-                    const taskName = queryParams.get('taskName');
                     const state = queryParams.get('state');
-                    const courseStatus = queryParams.get('courseStatus');
                     const params = {
                         courseId,
                         courseName,
-                        taskId,
-                        taskName,
-                        subjectId,
                         state,
-                        courseStatus,
                         ...filter,
                     };
                     const filteredParams = Object.fromEntries(

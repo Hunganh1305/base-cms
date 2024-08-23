@@ -29,3 +29,8 @@ export const taskLog = defineMessages({
     off: 'Nghỉ phép',
     bug: 'Bug',
 });
+
+export const lectureKindMessage = defineMessages({
+    section: 'Chương',
+    lesson: 'Bài học',
+});

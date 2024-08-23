@@ -5,6 +5,7 @@ export const hideAppLoading = createAction('app/HIDE_LOADING');
 export const toggleActionLoading = createAction('app/ACTION_LOADING');
 export const changeLanguage = createAction('app/CHANGE_LANGUAGE');
 export const uploadFile = createAction('app/UPLOAD_FILE');
+export const setSelectedRowKey = createAction('app/SET_SELECTED_ROW_KEY');
 
 export const actions = {
     showAppLoading,
@@ -12,4 +13,5 @@ export const actions = {
     toggleActionLoading,
     changeLanguage,
     uploadFile,
+    setSelectedRowKey,
 };

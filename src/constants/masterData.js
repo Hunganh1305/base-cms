@@ -14,9 +14,11 @@ import {
     TASK_LOG_WORKING,
     TASK_LOG_OFF,
     TASK_LOG_BUG,
+    LECTURE_LESSION,
+    LECTURE_SECTION,
 } from '@constants';
 import { defineMessages } from 'react-intl';
-import { nationKindMessage, actionMessage, taskLog } from './intl';
+import { nationKindMessage, actionMessage, taskLog, lectureKindMessage } from './intl';
 
 const commonMessage = defineMessages({
     statusActive: 'Active',
@@ -134,5 +136,18 @@ export const TaskLogKindOptions = [
         value: TASK_LOG_BUG,
         label: taskLog.bug,
         color: 'red',
+    },
+];
+
+export const lectureKindOptions = [
+    {
+        value: LECTURE_LESSION,
+        label: lectureKindMessage.lesson,
+        color: '#00A648',
+    },
+    {
+        value: LECTURE_SECTION,
+        label: lectureKindMessage.section,
+        color: '#FFBF00',
     },
 ];

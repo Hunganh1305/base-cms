@@ -42,7 +42,7 @@ export default {
         component: TaskLogSavePage,
         auth: true,
         title: 'Task Log Save Page',
-        permissions: [apiConfig.taskLog.create.baseURL],
+        permissions: [apiConfig.taskLog.create.baseURL,apiConfig.taskLog.update.baseURL],
         breadcrumbs: (message, paramHead, taskParam, location, title) => {
             return [
                 { breadcrumbName: message.course.defaultMessage, path: paramHead },

@@ -1,5 +1,8 @@
 import apiConfig from '@constants/apiConfig';
 import SubjectListPage from '.';
+import SubjectSavePage from './SubjectSavePage';
+import LectureListPage from './lecture';
+import LectureSavePage from './lecture/LectureSavePage';
 
 export default {
     subjectListPage: {
@@ -13,7 +16,22 @@ export default {
         path: '/subject/:id',
         title: 'Subject Save Page',
         auth: true,
-        // component: SubjectSavePage,
+        component: SubjectSavePage,
         permissions: [apiConfig.subject.update.baseURL, apiConfig.subject.create.baseURL],
+    },
+    lectureListPage: {
+        path: '/subject/lecture/:subjectId',
+        title: 'lecture List Page',
+        auth: true,
+        component: LectureListPage,
+        permissions: [apiConfig.lecture.getBySubject.baseURL],
+    },
+
+    lectureSavePage: {
+        path: '/subject/lecture/:subjectId/:id',
+        title: 'Lecture Save Page',
+        auth: true,
+        component: LectureSavePage,
+        permissions: [apiConfig.lecture.update.baseURL, apiConfig.lecture.create.baseURL],
     },
 };
