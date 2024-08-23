@@ -18,15 +18,9 @@ const useAuth = () => {
     useFetchAction(accountActions.getProfile, { immediate });
 
     const { loading } = useActionLoading(accountActions.getProfile.type);
-
-    // console.log('use auth', profile?.accountDto?.group);
-
     const permissions = profile?.accountDto?.group?.permissions?.map((permission) => {
-        // console.log('permission in loop', permission.action);
-
         return permission.action;
     });
-    // console.log('permission use auth', permissions);
 
     const kind = profile?.kind;
     const isAdmin = useCallback(() => {

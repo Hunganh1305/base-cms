@@ -16,13 +16,13 @@ const BaseTable = ({
 }) => (
     <Table
         onChange={onChange}
-        scroll={{ x: true }}
+        // scroll={{ x: true }}
         columns={columns.filter(Boolean)}
         dataSource={dataSource}
         loading={loading}
         rowKey={rowKey}
         rowSelection={rowSelection}
-        // scroll={{ x: 'max-content' }}
+        scroll={{ x: 'max-content' }}
         {...props}
         className={classNames(styles.baseTable, props.className)}
         pagination={pagination ? { ...pagination, showSizeChanger: false, hideOnSinglePage: true } : false}

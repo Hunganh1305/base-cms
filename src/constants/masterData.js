@@ -11,9 +11,12 @@ import {
     STATE_COURSE_FINISHED,
     STATE_COURSE_CANCELED,
     lectureStateMessage,
+    TASK_LOG_WORKING,
+    TASK_LOG_OFF,
+    TASK_LOG_BUG,
 } from '@constants';
 import { defineMessages } from 'react-intl';
-import { nationKindMessage, actionMessage } from './intl';
+import { nationKindMessage, actionMessage, taskLog } from './intl';
 
 const commonMessage = defineMessages({
     statusActive: 'Active',
@@ -114,4 +117,22 @@ export const lectureState = [
     { value: STATE_COURSE_STARTED, label: lectureStateMessage.started, color: 'warning' },
     { value: STATE_COURSE_FINISHED, label: lectureStateMessage.finished, color: 'green' },
     { value: STATE_COURSE_CANCELED, label: lectureStateMessage.canceled, color: 'red' },
+];
+
+export const TaskLogKindOptions = [
+    {
+        value: TASK_LOG_WORKING,
+        label: taskLog.working,
+        color: 'green',
+    },
+    {
+        value: TASK_LOG_OFF,
+        label: taskLog.off,
+        color: 'yellow',
+    },
+    {
+        value: TASK_LOG_BUG,
+        label: taskLog.bug,
+        color: 'red',
+    },
 ];

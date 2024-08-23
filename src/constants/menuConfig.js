@@ -1,5 +1,4 @@
 import React from 'react';
-import { UsergroupAddOutlined, ControlOutlined, InboxOutlined } from '@ant-design/icons';
 import routes from '@routes';
 import { FormattedMessage } from 'react-intl';
 import apiConfig from './apiConfig';
@@ -15,6 +14,12 @@ export const navMenuConfig = [
                 label: <FormattedMessage defaultMessage="Khóa học" />,
                 key: 'course',
                 path: routes.courseListPage.path,
+                permission: apiConfig.course.getList.baseURL,
+            },
+            {
+                label: <FormattedMessage defaultMessage="Môn học" />,
+                key: 'subject',
+                path: routes.subjectListPage.path,
                 permission: apiConfig.course.getList.baseURL,
             },
         ],

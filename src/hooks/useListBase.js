@@ -152,7 +152,6 @@ const useListBase = ({
     };
 
     const handleGetListError = (error) => {
-        console.log(error);
         if (error?.response?.data?.code == '[Ex2]: Access is denied') {
             notification({ type: 'error', message: 'Access is denied' });
         } else {
@@ -492,8 +491,6 @@ const useListBase = ({
     };
 
     const getItemDetailLink = (dataRow) => {
-        console.log('detail');
-
         return `${pagePath}/${dataRow.id}`;
     };
 
@@ -539,6 +536,7 @@ const useListBase = ({
                 fields={fields}
                 initialValues={initialValues}
                 onSearch={(values) => {
+                    console.log('onSearch',values);
                     mixinFuncs.handleFilterSearchChange(values);
                     onSearch?.(values);
                 }}

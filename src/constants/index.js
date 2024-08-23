@@ -51,6 +51,8 @@ export const TIME_FORMAT_DISPLAY = 'HH:mm';
 export const DATE_FORMAT_VALUE = 'DD/MM/YYYY';
 export const DATE_FORMAT_DISPLAY = 'DD/MM/YYYY';
 export const DEFAULT_FORMAT = 'DD/MM/YYYY HH:mm:ss';
+export const DATE_FORMAT_ZERO_TIME = 'DD/MM/YYYY 00:00:00';
+export const DATE_FORMAT_END_OF_DAY_TIME = 'DD/MM/YYYY 23:59:59';
 
 export const navigateTypeEnum = {
     PUSH: 'PUSH',
@@ -161,3 +163,7 @@ export const lectureStateMessage = defineMessages({
     canceled: 'Đã hủy',
     recruit: 'Chiêu sinh',
 });
+
+export const TASK_LOG_WORKING = 1;
+export const TASK_LOG_OFF = 100;
+export const TASK_LOG_BUG = 200;

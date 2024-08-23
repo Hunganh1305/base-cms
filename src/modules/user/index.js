@@ -27,7 +27,6 @@ const PostListPage = ({ pageOptions }) => {
         },
     });
 
-    console.log(data);
     const columns = [
         {
             title: '#',

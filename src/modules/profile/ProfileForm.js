@@ -114,17 +114,17 @@ const ProfileForm = (props) => {
 
     const handleFinish = (values) => {
         (values.accountDto.avatar = imageUrl),
-            mixinFuncs.handleSubmit({
-                ...values,
-                fullName: values.accountDto.fullName,
-                oldPassword: values.oldPassword,
-                password: values.password,
-                logo: logoUrl,
-                avatarPath: values.accountDto.avatar,
-                bannerPath: bannerUrl,
-                phone: values.accountDto.phone,
-                email: values.accountDto.email,
-            });
+        mixinFuncs.handleSubmit({
+            ...values,
+            fullName: values.accountDto.fullName,
+            oldPassword: values.oldPassword,
+            password: values.password,
+            logo: logoUrl,
+            avatarPath: values.accountDto.avatar,
+            bannerPath: bannerUrl,
+            phone: values.accountDto.phone,
+            email: values.accountDto.email,
+        });
     };
 
     return (
