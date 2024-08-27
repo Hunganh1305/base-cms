@@ -170,3 +170,17 @@ export const TASK_LOG_BUG = 200;
 
 export const LECTURE_SECTION = 1;
 export const LECTURE_LESSION = 2;
+
+export const STATE_PROJECT_TASK_CREATE = 1;
+export const STATE_PROJECT_TASK_PROCESSING = 2;
+export const STATE_PROJECT_TASK_DONE = 3;
+export const STATE_PROJECT_TASK_CANCEL = 4;
+
+export const STATE_PROJECT_STORY_CREATE = 1;
+export const STATE_PROJECT_STORY_PROCESSING = 2;
+export const STATE_PROJECT_STORY_DONE = 3;
+export const STATE_PROJECT_STORY_CANCEL = 4;
+
+export const TASK_KIND_FEATURE = 1;
+export const TASK_KIND_BUG = 2;
+export const TASK_KIND_TESTCASE = 3;

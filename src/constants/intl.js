@@ -34,3 +34,14 @@ export const lectureKindMessage = defineMessages({
     section: 'Chương',
     lesson: 'Bài học',
 });
+
+export const projectTaskStateMessage = defineMessages({
+    create: 'Đang tạo',
+    processing: 'Đang xử lý',
+    done: 'Hoàn tất',
+    cancel: 'Đã hủy',
+});
+export const archivedMessage = defineMessages({
+    NotReset: 'Chưa reset',
+    Reset: 'Đã reset',
+});
