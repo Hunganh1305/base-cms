@@ -16,6 +16,17 @@ function getLoader() {
     return div;
 }
 
+export const insertBaseURL = (data) => {
+    const imgArray = data?.replaceAll('{{baseURL}}', `${AppConstants.contentRootUrl}`);
+    return imgArray;
+};
+
+export const removeBaseURL = (data) => {
+    let imgArray = data?.replaceAll(AppConstants.contentRootUrl, '');
+    imgArray = imgArray?.replaceAll('src="', 'src="{{baseURL}}');
+    return imgArray;
+};
+
 const formats = [
     'header',
     'font',

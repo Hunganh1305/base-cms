@@ -16,9 +16,17 @@ import {
     TASK_LOG_BUG,
     LECTURE_LESSION,
     LECTURE_SECTION,
+    STATE_PROJECT_TASK_CREATE,
+    STATE_PROJECT_TASK_PROCESSING,
+    STATE_PROJECT_TASK_DONE,
+    STATE_PROJECT_TASK_CANCEL,
+    STATE_PROJECT_STORY_CREATE,
+    STATE_PROJECT_STORY_PROCESSING,
+    STATE_PROJECT_STORY_DONE,
+    STATE_PROJECT_STORY_CANCEL,
 } from '@constants';
 import { defineMessages } from 'react-intl';
-import { nationKindMessage, actionMessage, taskLog, lectureKindMessage } from './intl';
+import { nationKindMessage, actionMessage, taskLog, lectureKindMessage, projectTaskStateMessage, archivedMessage } from './intl';
 
 const commonMessage = defineMessages({
     statusActive: 'Active',
@@ -150,4 +158,22 @@ export const lectureKindOptions = [
         label: lectureKindMessage.section,
         color: '#FFBF00',
     },
+];
+
+export const projectTaskState = [
+    { value: STATE_PROJECT_TASK_CREATE, label: projectTaskStateMessage.create, color: 'yellow' },
+    { value: STATE_PROJECT_TASK_PROCESSING, label: projectTaskStateMessage.processing, color: 'blue' },
+    { value: STATE_PROJECT_TASK_DONE, label: projectTaskStateMessage.done, color: 'green' },
+    { value: STATE_PROJECT_TASK_CANCEL, label: projectTaskStateMessage.cancel, color: 'red' },
+];
+
+export const storyState = [
+    { value: STATE_PROJECT_STORY_CREATE, label: projectTaskStateMessage.create, color: 'yellow' },
+    { value: STATE_PROJECT_STORY_PROCESSING, label: projectTaskStateMessage.processing, color: 'blue' },
+    { value: STATE_PROJECT_STORY_DONE, label: projectTaskStateMessage.done, color: 'green' },
+    { value: STATE_PROJECT_STORY_CANCEL, label: projectTaskStateMessage.cancel, color: 'red' },
+];
+export const archivedOption = [
+    { value: 0, label: archivedMessage.NotReset },
+    { value: 1, label: archivedMessage.Reset },
 ];

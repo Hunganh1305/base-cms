@@ -2,7 +2,7 @@ import React from 'react';
 import routes from '@routes';
 import { FormattedMessage } from 'react-intl';
 import apiConfig from './apiConfig';
-import { IconSettings, IconSchool } from '@tabler/icons-react';
+import { IconSettings, IconSchool, IconClipboardText } from '@tabler/icons-react';
 
 export const navMenuConfig = [
     {
@@ -21,6 +21,19 @@ export const navMenuConfig = [
                 key: 'subject',
                 path: routes.subjectListPage.path,
                 permission: apiConfig.course.getList.baseURL,
+            },
+        ],
+    },
+    {
+        label: <FormattedMessage defaultMessage="Quản lý dự án" />,
+        key: 'quan-ly-du-an',
+        icon: <IconClipboardText size={16} />,
+        children: [
+            {
+                label: <FormattedMessage defaultMessage="Dự án" />,
+                key: 'project-management',
+                path: routes.projectListPage.path,
+                permission: apiConfig.project.getList.baseURL,
             },
         ],
     },

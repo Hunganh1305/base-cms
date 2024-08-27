@@ -13,6 +13,7 @@ import SettingSavePage from '@modules/listSetting/SettingSavePage';
 import settingsRoutes from '@modules/settings/routes';
 import courseRoutes from '@modules/courseManage/course/routes';
 import subjectRoutes from '@modules/courseManage/subject/routes';
+import projectRoutes from '@modules/projectManager/project/routes';
 
 /*
 	auth
@@ -76,6 +77,7 @@ const routes = {
         title: 'Settings page',
     },
 
+    ...projectRoutes,
     ...subjectRoutes,
     ...courseRoutes,
     ...adminsRoutes,
